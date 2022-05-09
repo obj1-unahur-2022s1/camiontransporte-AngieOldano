@@ -1,4 +1,4 @@
-import cosas.*
+import cosas2.*
 
 object camion{
 
@@ -17,6 +17,5 @@ object camion{
 	method tieneAlgoQuePesaEntre(min,max){return cosas.any({ c => c.peso()>min and c.peso()<max})}
 	method cosasMasPesadas(){return cosas.max({c => c.peso()}) }
 	method pesos(){ return cosas.map({c => c.peso()})}
-
+	method totalBultos()= cosas.sum({c=>c.bultos()})
 }
-

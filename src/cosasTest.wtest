@@ -1,2 +1,15 @@
 import camion.*
 import cosas.*
+
+test "embalaje con residuos radioactivos"{
+	residuosRadioactivos.peso(30)
+	embalajeSeguridad.agregarCosa(residuosRadioactivos)
+	contenedor.agregarCosa(bumblebee)
+	contenedor.agregarCosa(knightRider) 
+	assert.equals(30, embalajeSeguridad.peso())
+	assert.equals(30, residuosRadioactivos.peso())
+	assert.equals(1400, contenedor.peso())
+	
+	
+	
+}

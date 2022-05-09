@@ -1,3 +1,20 @@
 import camion.*
 import cosas.*
 
+test ""{
+	bumblebee.transformar()
+	assert.equals(1000,camion.pesoTotal())
+	assert.equals("robot", bumblebee.forma())
+	camion.cargar(bumblebee)
+	assert.equals(800, bumblebee.peso())
+	assert.equals(1800,camion.pesoTotal())
+	arena.peso(150)
+	camion.cargar(arena)
+	assert.equals(1950,camion.pesoTotal())
+	bateriaAntiarea.ponerMisiles()
+	paqueteLadrillos.cantLadrillos(80)
+	embalajeSeguridad.agregarCosa(paqueteLadrillos)
+	assert.equals(2410,camion.pesoTotal())
+
+	
+	}
