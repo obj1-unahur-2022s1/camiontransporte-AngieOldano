@@ -10,6 +10,5 @@ test "embalaje con residuos radioactivos"{
 	assert.equals(30, residuosRadioactivos.peso())
 	assert.equals(1400, contenedor.peso())
 	
-	
-	
+		
 }

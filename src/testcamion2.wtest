@@ -1,0 +1,20 @@
+import camion2.*
+import cosas2.*
+
+
+
+ test "obetos que superan peligrosidad de 100"{
+	camion.cargar(bumblebee)
+	bateriaAntiarea.ponerMisiles()
+	camion.cargar(bateriaAntiarea)
+	camion.cargar(knightRider)
+	arena.peso(10)
+	camion.cargar(arena)
+	camion.cargar(residuosRadioactivos)
+	assert.equals(7,camion.totalBultos())
+
+ }
+ 
+ 
+ 
+

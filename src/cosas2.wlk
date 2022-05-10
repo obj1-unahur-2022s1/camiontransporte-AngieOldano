@@ -23,15 +23,16 @@ object bumblebee {
 }
 
 object paqueteLadrillos{
+
 	var peso 
 	const property peligrosidad = 2
 	method peso()=peso
 	method cantLadrillos(cantidad) { peso=2*cantidad }
-	method bultos(cantLadrillos)=
+	method bultos()=
 		if(cantLadrillos<=100){1}
 		else if(cantLadrillos>=101 and cantLadrillos<=300){2}
 		else{3}
-	method consecuencia(){peso+=150}
+	method consecuencia(){self.cantLadrillos(12)}
 
 }
 
@@ -42,14 +43,14 @@ object arena {
 	method peso(gs) { peso=gs }
 	method peso() = peso
 	method bultos()=1
-	method consecuencia(){peso+=20}
+	method consecuencia(){self.peso(20)}
 
 }
 
 object bateriaAntiarea {
-	var peso = 300
+	var peso = 200
 	var peligrosidad = 0
-	var misiles = true
+	var misiles = false
 	var bultos 
 	method ponerMisiles() { misiles=true; peso=300; peligrosidad=100; bultos=2}
 	method sacarMisiles() { misiles = false; peso=200; peligrosidad=0; bultos=1}
@@ -57,17 +58,18 @@ object bateriaAntiarea {
 	method peligrosidad()=peligrosidad
 	method bultos()=bultos
 	method consecuencia(){self.ponerMisiles()}
+	method misiles()=misiles
 
 }
 
 
 object contenedor {
-	var peso = 100
+	var peso 
 	var peligrosidad = 0
 	var cosasAdentro = []
 	method agregarCosa(cosa){ 
 		cosasAdentro.add(cosa)
-		peso+=cosa.peso()
+		peso= 100+cosa.peso()
 		if(cosa.peligrosidad()>peligrosidad){
 			peligrosidad=cosa.peligrosidad()
 		}		
@@ -91,7 +93,7 @@ object residuosRadioactivos {
 	method peso(grs) {peso=grs} 
 	method peso() = peso
 	method bultos()=1
-	method consecuencia(){peso+=15}
+	method consecuencia(){self.peso(15)}
 }
 
 object embalajeSeguridad {

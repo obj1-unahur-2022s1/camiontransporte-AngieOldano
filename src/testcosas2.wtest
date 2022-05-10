@@ -1,0 +1,59 @@
+import camion2.*
+import cosas2.*
+
+
+ test "consecuencia"{
+	camion.cargar(bumblebee)
+	bumblebee.consecuencia()
+	assert.equals("robot", bumblebee.forma())
+
+ }
+ 
+ 
+ test "consecuencia2"{
+
+	camion.cargar(bateriaAntiarea)
+	bateriaAntiarea.consecuencia()
+	assert.that(bateriaAntiarea.misiles())
+	
+ }
+
+ 
+ test "consecuencia3"{
+
+	camion.cargar(paqueteLadrillos)
+	paqueteLadrillos.consecuencia()
+	assert.equals(24,paqueteLadrillos.peso())
+	
+ }
+ 
+  test "consecuencia4"{
+
+	camion.cargar(arena)
+	arena.consecuencia()
+	assert.equals(20,arena.peso())
+	
+ }
+
+ 
+    test "consecuencia5"{
+
+	contenedor.agregarCosa(paqueteLadrillos)
+	contenedor.agregarCosa(bateriaAntiarea)
+	contenedor.agregarCosa(knightRider)
+	contenedor.consecuencia()
+	assert.equals(24,paqueteLadrillos.peso())
+	assert.that(bateriaAntiarea.misiles())
+
+	
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
