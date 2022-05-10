@@ -20,7 +20,7 @@ import cosas2.*
 
  
  test "consecuencia3"{
-
+	paqueteLadrillos.cantLadrillos(12)
 	camion.cargar(paqueteLadrillos)
 	paqueteLadrillos.consecuencia()
 	assert.equals(24,paqueteLadrillos.peso())
@@ -37,7 +37,7 @@ import cosas2.*
 
  
     test "consecuencia5"{
-
+	paqueteLadrillos.cantLadrillos(12)
 	contenedor.agregarCosa(paqueteLadrillos)
 	contenedor.agregarCosa(bateriaAntiarea)
 	contenedor.agregarCosa(knightRider)

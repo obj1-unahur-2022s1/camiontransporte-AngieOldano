@@ -23,17 +23,17 @@ object bumblebee {
 }
 
 object paqueteLadrillos{
-
-	var peso 
+	var cantidad=1
+	var peso =1
 	const property peligrosidad = 2
-	method peso()=peso
-	method cantLadrillos(cantidad) { peso=2*cantidad }
+	
+	method cantLadrillos(cuantos) { peso=2*cantidad; cantidad=cuantos }
 	method bultos()=
-		if(cantLadrillos<=100){1}
-		else if(cantLadrillos>=101 and cantLadrillos<=300){2}
+		if(cantidad<=100){1}
+		else if(cantidad>=101 and cantidad<=300){2}
 		else{3}
 	method consecuencia(){self.cantLadrillos(12)}
-
+	method peso()=peso
 }
 
 

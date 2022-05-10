@@ -34,9 +34,9 @@ object arena {
 }
 
 object bateriaAntiarea {
-	var peso = 300
+	var peso = 200
 	var peligrosidad = 0
-	var misiles = true
+	var misiles = false
 	method ponerMisiles() { misiles=true; peso=300; peligrosidad=100}
 	method sacarMisiles() { misiles = false; peso=200; peligrosidad=0 }
 	method peso()= peso

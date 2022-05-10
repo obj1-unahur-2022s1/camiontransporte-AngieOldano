@@ -26,15 +26,18 @@ test "peso total y peso par"{
  }
  
  test "el primero de nivel"{
+ 	
 	camion.cargar(bumblebee)
-	camion.cargar(bateriaAntiarea)
+	embalajeSeguridad.agregarCosa(residuosRadioactivos)
+	camion.cargar(embalajeSeguridad)	
 	camion.cargar(knightRider)
 	arena.peso(10)
 	camion.cargar(arena)
-	camion.cargar(residuosRadioactivos)
 	paqueteLadrillos.cantLadrillos(65)
+	bateriaAntiarea.ponerMisiles()
+	camion.cargar(bateriaAntiarea)
 	camion.cargar(paqueteLadrillos)
-	assert.equals(bateriaAntiarea,camion.elDeNivel(200))
+	assert.equals(embalajeSeguridad,camion.elDeNivel(200))
 
  }
  
@@ -69,7 +72,6 @@ test "peso total y peso par"{
  
   test "obetos mas peligroso que la arena"{
 	camion.cargar(bumblebee)
-	bateriaAntiarea.ponerMisiles()
 	camion.cargar(bateriaAntiarea)	
 	arena.peso(100)
 	camion.cargar(arena)
@@ -77,7 +79,8 @@ test "peso total y peso par"{
 	paqueteLadrillos.cantLadrillos(5)
 	camion.cargar(paqueteLadrillos)
 	camion.cargar(residuosRadioactivos)
-	assert.equals([bateriaAntiarea,residuosRadioactivos,bumblebee,knightRider,paqueteLadrillos],camion.objetosMasPeligrososQue(arena))
+	Print(camion.objetosMasPeligrososQue(arena))
+	assert.equals([residuosRadioactivos,bumblebee,knightRider,paqueteLadrillos],camion.objetosMasPeligrososQue(arena))
 
  }
  
