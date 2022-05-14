@@ -1,3 +1,8 @@
+/*
+ * testcosas2: Los test consecuenciaX no son correctos. La consecuencia de la carga es un método
+ * que debe ejecutarse al cargar cada cosa en el camión y no debe ser testeada por separado.
+ */
+
 import camion2.*
 import cosas2.*
 
@@ -5,7 +10,7 @@ import cosas2.*
  test "consecuencia"{
 	camion.cargar(bumblebee)
 	bumblebee.consecuencia()
-	assert.equals("robot", bumblebee.forma())
+	assert.notThat(bumblebee.estaComoAuto())
 
  }
  
@@ -14,21 +19,21 @@ import cosas2.*
 
 	camion.cargar(bateriaAntiarea)
 	bateriaAntiarea.consecuencia()
-	assert.that(bateriaAntiarea.misiles())
+	assert.that(bateriaAntiarea.tieneMisiles())
 	
  }
 
  
  test "consecuencia3"{
-	paqueteLadrillos.cantLadrillos(12)
+	paqueteLadrillos.cantidad(12)
 	camion.cargar(paqueteLadrillos)
 	paqueteLadrillos.consecuencia()
-	assert.equals(24,paqueteLadrillos.peso())
+	assert.equals(14,paqueteLadrillos.peso())
 	
  }
  
   test "consecuencia4"{
-
+	/* falta indicar el peso de la arena previo a la carga */
 	camion.cargar(arena)
 	arena.consecuencia()
 	assert.equals(20,arena.peso())
@@ -37,13 +42,13 @@ import cosas2.*
 
  
     test "consecuencia5"{
-	paqueteLadrillos.cantLadrillos(12)
+	paqueteLadrillos.cantidad(12)
 	contenedor.agregarCosa(paqueteLadrillos)
 	contenedor.agregarCosa(bateriaAntiarea)
 	contenedor.agregarCosa(knightRider)
 	contenedor.consecuencia()
 	assert.equals(24,paqueteLadrillos.peso())
-	assert.that(bateriaAntiarea.misiles())
+	assert.that(bateriaAntiarea.tieneMisiles())
 
 	
  }
