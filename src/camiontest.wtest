@@ -1,3 +1,8 @@
+/*
+ * Bien(-). No daba correcto el test de objetosQueSuperanPeligrosidad porque los
+ * elementos de la lista no estaban en el mismo orden.
+ */
+
 import camion.*
 import cosas.*
 
@@ -79,9 +84,9 @@ test "peso total y peso par"{
 	paqueteLadrillos.cantLadrillos(5)
 	camion.cargar(paqueteLadrillos)
 	camion.cargar(residuosRadioactivos)
-	Print(camion.objetosMasPeligrososQue(arena))
-	assert.equals([residuosRadioactivos,bumblebee,knightRider,paqueteLadrillos],camion.objetosMasPeligrososQue(arena))
-
+	 //No existe objeto ni clase Print
+	assert.equals([bumblebee,knightRider,paqueteLadrillos,residuosRadioactivos],camion.objetosMasPeligrososQue(arena))
+	// las listas deben tener los objetos en el mismo orden para ser iguales
  }
  
    test "puede circular en ruta"{

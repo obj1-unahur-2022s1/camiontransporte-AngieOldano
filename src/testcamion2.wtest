@@ -1,3 +1,6 @@
+/*
+ * testcamion2: Bien. Corregí el método para indicar que bateriaAntiaerea tieneMisiles
+ */
 import camion2.*
 import cosas2.*
 
@@ -5,7 +8,7 @@ import cosas2.*
 
  test "obetos que superan peligrosidad de 100"{
 	camion.cargar(bumblebee)
-	bateriaAntiarea.ponerMisiles()
+	bateriaAntiarea.tieneMisiles(true)
 	camion.cargar(bateriaAntiarea)
 	camion.cargar(knightRider)
 	arena.peso(10)
